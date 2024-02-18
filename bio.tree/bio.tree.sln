@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.client", "bio.tree.client", "{0051465E-8D30-4F52-B84F-8403C64EE46E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.client", "src\bio.tree.client\bio.tree.client\bio.tree.client.csproj", "{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.server", "bio.tree.server", "{FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.shared", "bio.tree.shared", "{0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.api", "src\bio.tree.server.api\bio.tree.server.api.csproj", "{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.shared", "src\shared\bio.tree.shared\bio.tree.shared.csproj", "{421170A4-BDDA-4361-B515-544020E5CDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.domain", "src\bio.tree.server\bio.tree.server.domain\bio.tree.server.domain.csproj", "{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421170A4-BDDA-4361-B515-544020E5CDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421170A4-BDDA-4361-B515-544020E5CDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421170A4-BDDA-4361-B515-544020E5CDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421170A4-BDDA-4361-B515-544020E5CDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0051465E-8D30-4F52-B84F-8403C64EE46E} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337} = {0051465E-8D30-4F52-B84F-8403C64EE46E}
+		{FDCB65C5-D910-41D8-83F4-EAF5AA9077BE} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
+		{421170A4-BDDA-4361-B515-544020E5CDF7} = {0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE}
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
+	EndGlobalSection
+EndGlobal

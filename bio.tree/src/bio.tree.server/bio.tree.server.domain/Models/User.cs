@@ -1,3 +1,4 @@
+using bio.tree.server.domain.Exceptions;
 using bio.tree.server.domain.ValueObjects;
 using bio.tree.server.domain.ValueObjects.User;
 
@@ -46,6 +47,10 @@ public sealed class User : Entity
 
     public void AddLink(Guid userLinkId, Guid platformId, string url)
     {
+        if (_userLinks.Any(x => x.PlatformId == platformId))
+        {
+            throw new UserLinkWithThisPlatformAlreadyExistsException(platformId);
+        }
         _userLinks.Add(UserLink.Create(userLinkId, platformId, url));
     }
 }

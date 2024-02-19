@@ -2,15 +2,13 @@ using bio.tree.server.domain.ValueObjects;
 
 namespace bio.tree.server.domain.Models;
 
-public sealed class UserLink
+public sealed class UserLink : Entity
 {
-    public EntityId UserLinkId { get; set; }
     public EntityId PlatformId { get; set; }
     public Url Url { get; set; }
 
-    private UserLink(EntityId userLinkId, EntityId platformId, Url url)
+    private UserLink(EntityId id, EntityId platformId, Url url) : base(id)
     {
-        UserLinkId = userLinkId;
         PlatformId = platformId;
         Url = url;
     }

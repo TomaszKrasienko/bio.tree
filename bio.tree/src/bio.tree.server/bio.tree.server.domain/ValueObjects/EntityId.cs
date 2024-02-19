@@ -1,7 +1,19 @@
+using bio.tree.server.domain.Exceptions;
+
 namespace bio.tree.server.domain.ValueObjects;
 
-public sealed record EntityId(Guid Value)
+public sealed record EntityId
 {
+    public Guid Value { get; set; }
+    public EntityId(Guid value)
+    {
+        if (value == Guid.Empty)
+        {
+            throw new EmptyEntityIdException();
+        }
+        Value = value;
+    }
+    
     public static implicit operator Guid(EntityId entityId)
         => entityId.Value;
 
@@ -9,9 +21,10 @@ public sealed record EntityId(Guid Value)
         => new EntityId(value);
     
     public bool IsEmpty() => Value == Guid.Empty;
+    
+    public static bool operator == (EntityId entityId, Guid guid)
+        => entityId is not null && entityId.Value == guid;
 
-    public override int GetHashCode()
-    {
-        return Value.GetHashCode();
-    }
+    public static bool operator !=(EntityId entityId, Guid guid) 
+        => entityId is null || !(entityId.Value == guid);
 }

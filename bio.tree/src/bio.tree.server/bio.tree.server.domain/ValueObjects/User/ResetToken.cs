@@ -1,4 +1,4 @@
-namespace bio.tree.server.domain.Models;
+namespace bio.tree.server.domain.ValueObjects.User;
 
 public sealed record ResetToken
 {

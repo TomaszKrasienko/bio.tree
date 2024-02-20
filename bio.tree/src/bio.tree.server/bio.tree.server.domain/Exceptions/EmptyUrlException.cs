@@ -1,6 +1,4 @@
-using bio.tree.server.domain.Exceptions;
-
-namespace bio.tree.server.domain.Models;
+namespace bio.tree.server.domain.Exceptions;
 
 public sealed class EmptyUrlException()
     : BioTreeException("Url can not be empty");

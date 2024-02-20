@@ -47,6 +47,56 @@ public sealed class UserTests
         //assert
         exception.ShouldBeOfType<EmptyUrlException>();
     }
+
+    [Fact]
+    public void Verify_GivenValidToken_ShouldAddConfirmationDate()
+    {
+        //arrange
+        var token = _user.VerificationToken.Token;
+        
+        //act
+        _user.Verify(token, new DateTimeOffset());
+        
+        //assert
+        _user.VerificationToken.ConfirmationDate.ShouldNotBeNull();
+    }
+    
+    [Fact]
+    public void Verify_GivenInvalidToken_ShouldThrowInvalidVerificationTokenException()
+    {
+        //arrange
+        var token = "invalid_token";
+        
+        //act
+        var exception = Record.Exception(() => _user.Verify(token, new DateTimeOffset()));
+        
+        //assert
+        exception.ShouldBeOfType<InvalidVerificationTokenException>();
+    }
+
+    [Fact]
+    public void CanBeLogged_ForNotVerifiedUser_ShouldReturnFalse()
+    {
+        //act
+        var result = _user.CanBeLogged();
+        
+        //assert
+        result.ShouldBeFalse();
+    }
+
+    [Fact]
+    public void CanBeLogged_ForVerifiedUser_ShouldReturnTrue()
+    {
+        //act
+        var token = _user.VerificationToken.Token;
+        _user.Verify(token, new DateTimeOffset());
+        
+        //act
+        var result = _user.CanBeLogged();
+        
+        //assert
+        result.ShouldBeTrue();
+    }
     
     #region arrange
 

@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\bio.tree.server.domain\bio.tree.server.domain.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="bio.tree.server.application.tests"/>
+    </ItemGroup>
 </Project>

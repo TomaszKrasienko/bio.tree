@@ -1,4 +1,5 @@
 using bio.tree.server.domain.ValueObjects;
+using bio.tree.server.domain.ValueObjects.UserLink;
 
 namespace bio.tree.server.domain.Models;
 

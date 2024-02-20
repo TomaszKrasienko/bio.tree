@@ -107,5 +107,6 @@ public sealed class CreateUserTests
         user.FullName.LastName.ShouldBe(lastName);
         user.Nickname.Value.ShouldBe(nickName);
         user.Password.Value.ShouldBe(pass);
+        user.VerificationToken.Token.ShouldNotBeNullOrWhiteSpace();
     }
 }

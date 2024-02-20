@@ -39,12 +39,25 @@ public sealed class User : Entity
         Email = email;
         Nickname = nickname;
         Password = password;
+        VerificationToken = new VerificationToken();
     }
 
     public static User Create(Guid id, string email, string firstName, string lastName, string nickname,
         string password)
         => new User(id, new FullName(firstName, lastName), email, nickname, password);
 
+    public void Verify(string token, DateTimeOffset confirmationDate)
+    {
+        if (VerificationToken?.Token != token)
+        {
+            throw new InvalidVerificationTokenException(Id);
+        }
+        VerificationToken?.Confirm(confirmationDate);
+    }
+    
+    public bool CanBeLogged()
+        => VerificationToken?.ConfirmationDate is not null;
+    
     public void AddLink(Guid userLinkId, Guid platformId, string url)
     {
         if (_userLinks.Any(x => x.PlatformId == platformId))
@@ -53,4 +66,5 @@ public sealed class User : Entity
         }
         _userLinks.Add(UserLink.Create(userLinkId, platformId, url));
     }
+    
 }

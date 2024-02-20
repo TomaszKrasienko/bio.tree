@@ -1,4 +1,6 @@
-namespace bio.tree.server.domain.Models;
+using bio.tree.server.domain.Exceptions;
+
+namespace bio.tree.server.domain.ValueObjects.UserLink;
 
 public sealed record Url
 {

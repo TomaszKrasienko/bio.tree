@@ -26,6 +26,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\src\bio.tree.server\bio.tree.server.application\bio.tree.server.application.csproj" />
+      <ProjectReference Include="..\bio.tree.server.tests.shared\bio.tree.server.tests.shared.csproj" />
     </ItemGroup>
 
 </Project>

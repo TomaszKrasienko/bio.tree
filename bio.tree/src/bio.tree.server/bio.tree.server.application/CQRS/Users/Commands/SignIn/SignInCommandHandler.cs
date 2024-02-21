@@ -1,6 +1,6 @@
 using bio.tree.server.application.CQRS.Abstractions.Commands;
+using bio.tree.server.application.Exceptions;
 using bio.tree.server.application.Services;
-using bio.tree.server.domain.Exceptions;
 using bio.tree.server.domain.Repositories;
 
 namespace bio.tree.server.application.CQRS.Users.Commands.SignIn;
@@ -33,11 +33,3 @@ internal sealed class SignInCommandHandler(
         tokenStorage.Set(token);
     }
 }
-
-internal class InvalidPasswordException(string email)
-    : BioTreeException($"Invalid password for user with email: {email}");
-public sealed class UserNotFoundException(string email)
-    : BioTreeException($"User with email: {email} does not exists");
-
-public sealed class UserCanNotBeLoggedException(string email)
-    : BioTreeException($"User with email: {email} does not exists");

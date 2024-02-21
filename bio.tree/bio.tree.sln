@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.tests.shared", "tests\bio.tree.server\bio.tree.server.tests.shared\bio.tree.server.tests.shared.csproj", "{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure", "src\bio.tree.server\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj", "{BC52C91E-516D-469A-A812-37A91FA2F757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC52C91E-516D-469A-A812-37A91FA2F757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC52C91E-516D-469A-A812-37A91FA2F757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC52C91E-516D-469A-A812-37A91FA2F757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC52C91E-516D-469A-A812-37A91FA2F757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0051465E-8D30-4F52-B84F-8403C64EE46E} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
@@ -80,5 +86,6 @@ Global
 		{0EFB0433-3B67-4B93-89C6-135E5D9C4396} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{6E5288AC-86B4-4223-A6AE-9BFE6396653E} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
+		{BC52C91E-516D-469A-A812-37A91FA2F757} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 	EndGlobalSection
 EndGlobal

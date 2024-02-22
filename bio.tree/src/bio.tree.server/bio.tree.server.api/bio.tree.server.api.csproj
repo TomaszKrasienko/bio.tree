@@ -18,4 +18,7 @@
       <ProjectReference Include="..\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="bio.tree.server.integration.tests"/>
+    </ItemGroup>
 </Project>

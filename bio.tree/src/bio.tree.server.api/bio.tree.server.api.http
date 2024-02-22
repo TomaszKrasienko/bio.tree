@@ -1,6 +1,0 @@
-@bio.tree.server.api_HostAddress = http://localhost:5001
-
-GET {{bio.tree.server.api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.server", "bio.tree
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.shared", "bio.tree.shared", "{0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.api", "src\bio.tree.server.api\bio.tree.server.api.csproj", "{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.api", "src\bio.tree.server\bio.tree.server.api\bio.tree.server.api.csproj", "{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.shared", "src\shared\bio.tree.shared\bio.tree.shared.csproj", "{421170A4-BDDA-4361-B515-544020E5CDF7}"
 EndProject

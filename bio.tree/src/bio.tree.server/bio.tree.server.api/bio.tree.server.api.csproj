@@ -14,7 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\shared\bio.tree.shared\bio.tree.shared.csproj" />
+      <ProjectReference Include="..\..\shared\bio.tree.shared\bio.tree.shared.csproj" />
+      <ProjectReference Include="..\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

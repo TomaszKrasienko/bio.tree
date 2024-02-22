@@ -1,4 +1,4 @@
-namespace bio.tree.server.infrastructure.Security.Configuration;
+namespace bio.tree.server.infrastructure.Security.Configuration.Models;
 
 public record JwtOptions
 {

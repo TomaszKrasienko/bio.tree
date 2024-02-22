@@ -1,3 +1,4 @@
+using bio.tree.server.infrastructure.CQRS.Extensions;
 using bio.tree.server.infrastructure.DAL.Configuration;
 using bio.tree.server.infrastructure.Security.Configuration;
 using bio.tree.server.infrastructure.Storage.Configuration;
@@ -14,5 +15,13 @@ public static class Extensions
             .AddDal(configuration)
             .AddSecurity(configuration)
             .AddStorage()
-            .AddTime();
+            .AddTime()
+            .AddCqrs()
+            .AddControllersConfiguration();
+
+    private static IServiceCollection AddControllersConfiguration(this IServiceCollection services)
+    {
+        services.AddControllers();
+        return services;
+    }
 }

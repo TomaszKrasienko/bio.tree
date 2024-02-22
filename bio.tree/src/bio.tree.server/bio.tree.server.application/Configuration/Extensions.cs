@@ -7,5 +7,4 @@ public static class Extensions
     private static IServiceCollection AddApplication(this IServiceCollection services)
         => services;
     
-    
 }

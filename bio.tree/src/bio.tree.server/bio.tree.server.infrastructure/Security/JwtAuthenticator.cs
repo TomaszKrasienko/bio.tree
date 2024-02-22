@@ -1,9 +1,10 @@
 
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 using bio.tree.server.application.DTO;
 using bio.tree.server.application.Services;
-using bio.tree.server.infrastructure.Security.Configuration;
+using bio.tree.server.infrastructure.Security.Configuration.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -20,6 +21,9 @@ internal sealed class JwtAuthenticator : IAuthenticator
     {
         _clock = clock;
         _options = options.Value;
+        _signingCredentials = new SigningCredentials(new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(options.Value.SigningKey)),SecurityAlgorithms.HmacSha256);
+        _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
     }
     
     public JwtTokenDto CreateToken(Guid userId)

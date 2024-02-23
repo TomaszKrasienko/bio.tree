@@ -1,8 +1,10 @@
 using bio.tree.server.infrastructure.CQRS.Extensions;
 using bio.tree.server.infrastructure.DAL.Configuration;
+using bio.tree.server.infrastructure.Exceptions.Configuration;
 using bio.tree.server.infrastructure.Security.Configuration;
 using bio.tree.server.infrastructure.Storage.Configuration;
 using bio.tree.server.infrastructure.Time.Configuration;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +19,7 @@ public static class Extensions
             .AddStorage()
             .AddTime()
             .AddCqrs()
+            .AddExceptions()
             .AddControllersConfiguration();
 
     private static IServiceCollection AddControllersConfiguration(this IServiceCollection services)
@@ -24,6 +27,9 @@ public static class Extensions
         services.AddControllers();
         return services;
     }
+
+    public static WebApplication UseInfrastructure(this WebApplication app)
+        => app.UseExceptions();
 
     public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
     {

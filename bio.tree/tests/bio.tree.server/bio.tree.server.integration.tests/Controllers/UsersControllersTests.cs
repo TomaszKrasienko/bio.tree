@@ -9,6 +9,7 @@ using Xunit;
 
 namespace bio.tree.server.integration.tests.Controllers;
 
+[Collection("integration-tests")]
 public sealed class UsersControllersTests : BaseTestController, IDisposable
 {
     [Fact]

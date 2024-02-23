@@ -8,7 +8,7 @@ public sealed class UserLink : Entity
     public EntityId PlatformId { get; set; }
     public Url Url { get; set; }
 
-    private UserLink(EntityId id, EntityId platformId, Url url) : base(id)
+    public UserLink(EntityId id, EntityId platformId, Url url) : base(id)
     {
         PlatformId = platformId;
         Url = url;

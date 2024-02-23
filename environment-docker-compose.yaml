@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo
+    container_name: bio.tree.mongo
+    restart: unless-stopped
+    volumes:
+      - mongo:/data/db
+    ports:
+      - 50001:27017
+
+volumes:
+  mongo:
+    driver: local

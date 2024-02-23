@@ -2,3 +2,15 @@
 
 ###
 GET {{url}}/test
+
+###
+POST {{url}}/users/sign-up
+Content-Type: application/json
+
+{
+    "email":"test@test.pl",
+    "firstName":"Joe",
+    "lastName":"Doe",
+    "nickname":"JoeDoe99",
+    "password":"Pass123!"
+}

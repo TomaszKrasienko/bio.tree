@@ -14,10 +14,9 @@ public sealed class User : Entity
     public ResetToken ResetToken { get; private set; }
     private readonly HashSet<UserLink> _userLinks;
     public IEnumerable<UserLink> UserLinks => _userLinks;
-    
 
-    private User(EntityId id, FullName fullName, Email email, Nickname nickname, Password password, 
-        VerificationToken verificationToken, ResetToken resetToken) : base(id)
+    public User(EntityId id, FullName fullName, Email email, Nickname nickname, Password password, 
+        VerificationToken verificationToken, ResetToken resetToken, IEnumerable<UserLink> userLinks) : base(id)
     {
         FullName = fullName;
         Email = email;
@@ -25,6 +24,7 @@ public sealed class User : Entity
         Password = password;
         VerificationToken = verificationToken;
         ResetToken = resetToken;
+        _userLinks = userLinks.ToHashSet();
     }
     
     private User(EntityId id) : base(id)

@@ -24,7 +24,7 @@ public sealed class User : Entity
         Password = password;
         VerificationToken = verificationToken;
         ResetToken = resetToken;
-        _userLinks = userLinks.ToHashSet();
+        _userLinks = userLinks?.ToHashSet();
     }
     
     private User(EntityId id) : base(id)

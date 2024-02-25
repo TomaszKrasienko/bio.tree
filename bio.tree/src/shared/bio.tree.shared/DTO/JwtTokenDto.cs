@@ -1,4 +1,4 @@
-namespace bio.tree.server.application.DTO;
+namespace bio.tree.shared.DTO;
 
 public class JwtTokenDto
 {

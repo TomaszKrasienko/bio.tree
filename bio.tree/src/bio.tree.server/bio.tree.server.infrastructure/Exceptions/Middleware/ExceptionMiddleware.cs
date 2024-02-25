@@ -1,4 +1,6 @@
+using bio.tree.server.application.Exceptions;
 using bio.tree.server.domain.Exceptions;
+using bio.tree.shared;
 using Humanizer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -29,12 +31,17 @@ internal sealed class ExceptionMiddleware : IMiddleware
     {
         var (statusCode, error) = exception switch
         {
-            BioTreeException => (StatusCodes.Status400BadRequest, new
+            AuthorizeException => (StatusCodes.Status400BadRequest, new ErrorDto
             {
-                Exception = exception.GetType().Name.Underscore().Replace("Exception", ""),
+               Exception = GetException(nameof(AuthorizeException)),
+               Message = "Wrong credentials"
+            }),
+            BioTreeException => (StatusCodes.Status400BadRequest, new ErrorDto
+            {
+                Exception = GetException(exception.GetType().Name),
                 Message = exception.Message
             }),
-            _ => (StatusCodes.Status500InternalServerError, new
+            _ => (StatusCodes.Status500InternalServerError, new ErrorDto
             {
                 Exception = "server error", 
                 Message = "There was an error"
@@ -43,4 +50,7 @@ internal sealed class ExceptionMiddleware : IMiddleware
         context.Response.StatusCode = statusCode;
         await context.Response.WriteAsJsonAsync(error);
     }
+
+    private string GetException(string name)
+        => name.Underscore().ToLower().Replace("_exception", "");
 }

@@ -14,7 +14,7 @@ public record VerificationToken
             .Replace("==", "");;
     }
 
-    private VerificationToken(string token, DateTimeOffset confirmationDate)
+    public VerificationToken(string token, DateTimeOffset? confirmationDate)
     {
         Token = token;
         ConfirmationDate = confirmationDate;

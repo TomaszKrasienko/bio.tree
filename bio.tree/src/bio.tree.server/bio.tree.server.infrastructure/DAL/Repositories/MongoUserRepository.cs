@@ -21,20 +21,16 @@ internal sealed class MongoUserRepository : IUserRepository
         => _collection.InsertOneAsync(user.AsDocument());
 
     public Task UpdateAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
+        => _collection.FindOneAndReplaceAsync(x => x.Id.Equals(user.Id), user.AsDocument());
 
     public Task<bool> ExistsAsync(string email)
         => _collection.Find(x => x.Email == email).AnyAsync();
 
-    public Task<User> GetByVerificationTokenAsync(string token)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<User> GetByVerificationTokenAsync(string token)
+        => (await _collection.Find(x => x.VerificationToken == token)?
+            .FirstOrDefaultAsync()!)?.AsEntity();
 
-    public Task<User> GetByEmailAsync(string email)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<User> GetByEmailAsync(string email)
+        => (await _collection.Find(x => x.Email == email)?
+            .FirstOrDefaultAsync()!)?.AsEntity();
 }

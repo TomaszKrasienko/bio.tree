@@ -9,10 +9,5 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseInfrastructure();
 app.MapControllers();
-app.MapGet("/test", () => Results.Ok(new TestDto()
-{
-    Text = "Hello web api!"
-}));
-
 app.Run();
 

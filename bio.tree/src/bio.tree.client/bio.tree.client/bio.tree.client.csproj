@@ -6,12 +6,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\" />
-      <Folder Include="Configuration\" />
+      <ProjectReference Include="..\..\shared\bio.tree.shared\bio.tree.shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\shared\bio.tree.shared\bio.tree.shared.csproj" />
+      <Folder Include="Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     </ItemGroup>
 
 </Project>

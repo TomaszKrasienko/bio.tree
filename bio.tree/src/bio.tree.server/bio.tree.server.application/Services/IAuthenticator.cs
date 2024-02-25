@@ -1,4 +1,4 @@
-using bio.tree.server.application.DTO;
+using bio.tree.shared.DTO;
 
 namespace bio.tree.server.application.Services;
 

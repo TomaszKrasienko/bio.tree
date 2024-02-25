@@ -2,9 +2,9 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using bio.tree.server.application.DTO;
 using bio.tree.server.application.Services;
 using bio.tree.server.infrastructure.Security.Configuration.Models;
+using bio.tree.shared.DTO;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 

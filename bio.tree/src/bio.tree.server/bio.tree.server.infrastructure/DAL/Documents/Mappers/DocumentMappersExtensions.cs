@@ -23,6 +23,7 @@ internal static class DocumentMappersExtensions
     internal static UserLinkDocument AsDocument(this UserLink userLink)
         => new UserLinkDocument()
         {
+            Id = userLink.Id,
             PlatformId = userLink.PlatformId,
             Url = userLink.Url
         };

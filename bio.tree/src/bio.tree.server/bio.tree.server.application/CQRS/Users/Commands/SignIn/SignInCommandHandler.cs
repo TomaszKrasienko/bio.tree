@@ -16,7 +16,7 @@ internal sealed class SignInCommandHandler(
         var user = await userRepository.GetByEmailAsync(command.Email);
         if (user is null)
         {
-            throw new UserNotFoundException(command.Email);
+            throw new AuthorizeUserNotFoundException(command.Email);
         }
 
         if (!user.CanBeLogged())

@@ -3,10 +3,10 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\shared\bio.tree.shared\bio.tree.shared.csproj" />
       <ProjectReference Include="..\bio.tree.server.domain\bio.tree.server.domain.csproj" />
     </ItemGroup>
     <ItemGroup>

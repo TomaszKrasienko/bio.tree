@@ -1,3 +1,4 @@
+using bio.tree.server.infrastructure.Contexts.Configuration;
 using bio.tree.server.infrastructure.CQRS.Extensions;
 using bio.tree.server.infrastructure.DAL.Configuration;
 using bio.tree.server.infrastructure.Exceptions.Configuration;
@@ -20,6 +21,7 @@ public static class Extensions
             .AddTime()
             .AddCqrs()
             .AddExceptions()
+            .AddContexts()
             .AddControllersConfiguration();
 
     private static IServiceCollection AddControllersConfiguration(this IServiceCollection services)

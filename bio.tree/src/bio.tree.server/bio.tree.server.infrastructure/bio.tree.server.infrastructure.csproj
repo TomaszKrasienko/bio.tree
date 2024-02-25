@@ -22,5 +22,6 @@
     <ItemGroup>
         <InternalsVisibleTo Include="bio.tree.server.integration.tests"/>
         <InternalsVisibleTo Include="bio.tree.server.infrastructure.tests"/>
+        <InternalsVisibleTo Include="bio.tree.server.tests.shared"/>
     </ItemGroup>
 </Project>

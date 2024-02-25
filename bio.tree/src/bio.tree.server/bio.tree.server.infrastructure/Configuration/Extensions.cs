@@ -31,7 +31,16 @@ public static class Extensions
     }
 
     public static WebApplication UseInfrastructure(this WebApplication app)
-        => app.UseExceptions();
+        => app
+            .UseExceptions()
+            .UseSecurity();
+
+    private static WebApplication UseSecurity(this WebApplication app)
+    {
+        app.UseAuthentication();
+        app.UseAuthorization();
+        return app;
+    }
 
     public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
     {

@@ -6,7 +6,7 @@ public class TestClock : IClock
 {
     private readonly DateTimeOffset _dateTimeOffset;
     private TestClock()
-        => _dateTimeOffset = new DateTimeOffset();
+        => _dateTimeOffset = DateTimeOffset.Now;
 
     private TestClock(DateTimeOffset dateTimeOffset)
         => _dateTimeOffset = dateTimeOffset;

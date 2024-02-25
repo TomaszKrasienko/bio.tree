@@ -14,3 +14,20 @@ Content-Type: application/json
     "nickname":"JoeDoe99",
     "password":"Pass123!"
 }
+
+###
+# @name sing_in
+POST {{url}}/users/sign-in
+Content-Type: application/json
+
+{
+    "email":"test@test.pl",
+    "password":"Pass123!"
+}
+
+###
+@token = {{sing_in.request.body.$.token}}
+
+###
+GET {{url}}/users/me
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIxZTFjY2IzLTYyNDAtNDY5Zi1hYTAyLTY3NDE1NzllNWQ2OSIsIm5iZiI6MTcwODg5NjMyNCwiZXhwIjoxNzA4ODk2OTI0LCJpc3MiOiJiaW90cmVlaXNzdWVyIiwiYXVkIjoiYmlvdHJlZWF1ZGllbmNlIn0.53K8X6cEiNvdBrCXtFvIuZAmW2Keea-s8wdHJhmzdYE

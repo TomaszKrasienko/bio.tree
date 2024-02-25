@@ -6,7 +6,7 @@ namespace bio.tree.server.infrastructure.CQRS;
 
 internal sealed class QueryDispatcher(IServiceProvider serviceProvider) : IQueryDispatcher
 {
-    public Task<TResult> HandleAsync<TResult>(IQuery<TResult> query, CancellationToken cancellationToken)
+    public Task<TResult> SendAsync<TResult>(IQuery<TResult> query, CancellationToken cancellationToken)
     {
         using var scope = serviceProvider.CreateScope();
         var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));

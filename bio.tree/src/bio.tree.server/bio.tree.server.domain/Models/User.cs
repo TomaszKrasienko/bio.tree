@@ -41,7 +41,7 @@ public sealed class User : Entity
         Password = password;
         VerificationToken = new VerificationToken();
     }
-
+    
     public static User Create(Guid id, string email, string firstName, string lastName, string nickname,
         string password)
         => new User(id, new FullName(firstName, lastName), email, nickname, password);

@@ -3,7 +3,9 @@ using System.Net.Http.Json;
 using bio.tree.server.application.CQRS.Users.Commands.SignUp;
 using bio.tree.server.application.CQRS.Users.Commands.Verify;
 using bio.tree.server.infrastructure.DAL.Documents;
+using bio.tree.server.tests.shared.Factories.Documents;
 using bio.tree.shared;
+using bio.tree.shared.DTO;
 using MongoDB.Driver;
 using Shouldly;
 using Xunit;
@@ -105,6 +107,25 @@ public sealed class UsersControllersTests : BaseTestController, IDisposable
         var error = await response.Content.ReadFromJsonAsync<ErrorDto>();
         error.Exception.ShouldBe("authorize");
         error.Message.ShouldBe("Wrong credentials");
+    }
+
+    [Fact]
+    public async Task Me_ForAuthorizedRequest_ShouldReturnStatusCodeOkWithUserDto()
+    {
+        //arrange
+        var user = UserDocumentFactory.Get(1, 1).Single();
+        var collection = TestDatabase.GetCollection<UserDocument>("users");
+        await collection.InsertOneAsync(user);
+        Authorize(user.Id);
+        
+        //act
+        var response = await Client.GetAsync("users/me");
+        
+        //assert
+         response.StatusCode.ShouldBe(HttpStatusCode.OK);
+        // var responseObj = await response.Content.ReadFromJsonAsync<UserDto>();
+        // responseObj.ShouldNotBeNull();
+        var tmp = await response.Content.ReadAsStringAsync();
     }
     
     #region arrange

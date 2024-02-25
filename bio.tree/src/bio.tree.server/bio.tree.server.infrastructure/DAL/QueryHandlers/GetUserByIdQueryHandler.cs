@@ -1,6 +1,7 @@
 using bio.tree.server.application.CQRS.Abstractions.Queries;
 using bio.tree.server.application.CQRS.Users.Queries;
 using bio.tree.server.infrastructure.DAL.Documents;
+using bio.tree.server.infrastructure.DAL.Documents.Mappers;
 using bio.tree.shared.DTO;
 using MongoDB.Driver;
 
@@ -12,8 +13,6 @@ internal sealed class GetUserByIdQueryHandler(IMongoDatabase database)
     private const string CollectionName = "users";
     private readonly IMongoCollection<UserDocument> _collection = database.GetCollection<UserDocument>(CollectionName);
 
-    public Task<UserDto> HandleAsync(GetUserByIdQuery query, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<UserDto> HandleAsync(GetUserByIdQuery query, CancellationToken cancellationToken)
+        => (await _collection.Find(x => x.Id == query.Id).FirstOrDefaultAsync(cancellationToken)).AsDto();
 }

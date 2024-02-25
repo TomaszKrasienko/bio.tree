@@ -8,5 +8,5 @@ internal static class Extensions
     internal static IServiceCollection AddContexts(this IServiceCollection services)
         => services
             .AddSingleton<IIdentityContextFactory, IdentityContextFactory>()
-            .AddTransient<IIdentityContext>(sp => sp.GetRequiredService<IdentityContextFactory>().Create());
+            .AddTransient<IIdentityContext>(sp => sp.GetRequiredService<IIdentityContextFactory>().Create());
 }

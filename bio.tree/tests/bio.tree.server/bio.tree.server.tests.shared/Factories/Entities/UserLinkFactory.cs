@@ -5,14 +5,17 @@ using Bogus;
 
 namespace bio.tree.server.tests.shared.Factories.Entities;
 
-public static class UserLinkFactory
+internal static class UserLinkFactory
 {
-    public static List<UserLink> Get(int count = 1)
+    internal static IEnumerable<UserLink> Get(int count = 1)
     {
         var userLinkFaker = new Faker<UserLink>()
-            .RuleFor(p => p.PlatformId, f => new EntityId(Guid.NewGuid()))
-            .RuleFor(p => p.Id, f => new EntityId(Guid.NewGuid()))
-            .RuleFor(p => p.Url, f => new Url(f.PickRandom<string>()));
+            .CustomInstantiator(f 
+                => new UserLink(
+                    new EntityId(Guid.NewGuid()),
+                    new EntityId(Guid.NewGuid()), 
+                    new Url(f.Internet.Url())
+                    ));
         return userLinkFaker.Generate(count);
     }
 }

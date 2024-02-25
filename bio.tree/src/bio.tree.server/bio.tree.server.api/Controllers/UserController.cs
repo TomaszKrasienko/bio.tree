@@ -1,8 +1,10 @@
 using System.Net;
 using bio.tree.server.application.CQRS.Abstractions.Commands;
+using bio.tree.server.application.CQRS.Abstractions.Queries;
 using bio.tree.server.application.CQRS.Users.Commands.SignIn;
 using bio.tree.server.application.CQRS.Users.Commands.SignUp;
 using bio.tree.server.application.CQRS.Users.Commands.Verify;
+using bio.tree.server.application.CQRS.Users.Queries;
 using bio.tree.server.application.Services;
 using bio.tree.server.infrastructure.Contexts.Abstractions;
 using bio.tree.shared.DTO;
@@ -15,15 +17,14 @@ namespace bio.tree.server.api.Controllers;
 [Route("users")]
 public sealed class UserController(
     ICommandDispatcher commandDispatcher,
+    IQueryDispatcher queryDispatcher,
     ITokenStorage tokenStorage,
     IIdentityContext identityContext) : ControllerBase
 {
-    // [HttpGet("me")]
-    // [Authorize]
-    // public async Task<ActionResult<UserDto>> GetMe()
-    // {
-    //     
-    // }
+    [HttpGet("me")]
+    [Authorize]
+    public async Task<ActionResult<UserDto>> GetMe(CancellationToken cancellationToken)
+        => Ok(await queryDispatcher.SendAsync(new GetUserByIdQuery(identityContext.Id), cancellationToken));
     
     [HttpPost("sign-up")]
     [ProducesResponseType(StatusCodes.Status202Accepted)]

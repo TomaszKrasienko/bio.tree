@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.integration.tests", "tests\bio.tree.server\bio.tree.server.integration.tests\bio.tree.server.integration.tests.csproj", "{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure.tests", "tests\bio.tree.server\bio.tree.server.infrastructure.tests\bio.tree.server.infrastructure.tests.csproj", "{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0051465E-8D30-4F52-B84F-8403C64EE46E} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
@@ -94,5 +100,6 @@ Global
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
 		{BC52C91E-516D-469A-A812-37A91FA2F757} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
+		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
 	EndGlobalSection
 EndGlobal

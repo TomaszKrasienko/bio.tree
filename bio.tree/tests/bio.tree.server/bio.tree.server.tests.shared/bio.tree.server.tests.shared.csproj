@@ -10,4 +10,8 @@
       <ProjectReference Include="..\..\..\src\bio.tree.server\bio.tree.server.application\bio.tree.server.application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Bogus" Version="35.4.0" />
+    </ItemGroup>
+
 </Project>

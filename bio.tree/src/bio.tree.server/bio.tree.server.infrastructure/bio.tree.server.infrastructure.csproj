@@ -17,8 +17,10 @@
       <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.4.0-preview1" />
       <PackageReference Include="MongoDB.Driver" Version="2.24.0" />
       <PackageReference Include="Scrutor" Version="4.2.2" />
+      <PackageReference Include="Shouldly" Version="4.2.1" />
     </ItemGroup>
     <ItemGroup>
         <InternalsVisibleTo Include="bio.tree.server.integration.tests"/>
+        <InternalsVisibleTo Include="bio.tree.server.infrastructure.tests"/>
     </ItemGroup>
 </Project>

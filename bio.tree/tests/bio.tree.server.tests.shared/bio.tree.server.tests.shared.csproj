@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="Bogus" Version="35.4.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <InternalsVisibleTo Include="bio.tree.server.infrastructure.tests"/>
+        <InternalsVisibleTo Include="bio.tree.server.integration.tests"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\bio.tree.server.application\bio.tree.server.application.csproj" />
+      <ProjectReference Include="..\..\src\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

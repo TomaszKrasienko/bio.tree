@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
+      <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+      <PackageReference Include="MongoDB.Driver" Version="2.24.0" />
+      <PackageReference Include="Scrutor" Version="4.2.2" />
+      <PackageReference Include="Shouldly" Version="4.2.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="bio.tree.server.integration.tests"/>
+        <InternalsVisibleTo Include="bio.tree.server.infrastructure.tests"/>
+        <InternalsVisibleTo Include="bio.tree.server.tests.shared"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\bio.tree.server.application\bio.tree.server.application.csproj" />
+    </ItemGroup>
+</Project>

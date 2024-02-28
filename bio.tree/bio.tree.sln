@@ -2,37 +2,27 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.client", "bio.tree.client", "{0051465E-8D30-4F52-B84F-8403C64EE46E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.api", "src\bio.tree.server.api\bio.tree.server.api.csproj", "{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.client", "src\bio.tree.client\bio.tree.client\bio.tree.client.csproj", "{6FAC4124-AC9B-4490-8861-E7C0CF6E2337}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.server", "bio.tree.server", "{FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.shared", "bio.tree.shared", "{0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.api", "src\bio.tree.server\bio.tree.server.api\bio.tree.server.api.csproj", "{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.shared", "src\shared\bio.tree.shared\bio.tree.shared.csproj", "{421170A4-BDDA-4361-B515-544020E5CDF7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.domain", "src\bio.tree.server\bio.tree.server.domain\bio.tree.server.domain.csproj", "{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.domain", "src\bio.tree.server.domain\bio.tree.server.domain.csproj", "{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6BB0F0AE-B5A2-475C-A36A-9F5BB024A461}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bio.tree.server", "bio.tree.server", "{9C328220-BCF7-4D5D-862A-928466BA2F93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.domain.tests", "tests\bio.tree.server\bio.tree.server.domain.tests\bio.tree.server.domain.tests.csproj", "{5297CF5D-C37D-4E26-98B1-8BC0EF0B1199}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.domain.tests", "tests\bio.tree.server.domain.tests\bio.tree.server.domain.tests.csproj", "{5297CF5D-C37D-4E26-98B1-8BC0EF0B1199}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.application", "src\bio.tree.server\bio.tree.server.application\bio.tree.server.application.csproj", "{0EFB0433-3B67-4B93-89C6-135E5D9C4396}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.application", "src\bio.tree.server.application\bio.tree.server.application.csproj", "{0EFB0433-3B67-4B93-89C6-135E5D9C4396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.application.tests", "tests\bio.tree.server\bio.tree.server.application.tests\bio.tree.server.application.tests.csproj", "{6E5288AC-86B4-4223-A6AE-9BFE6396653E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.application.tests", "tests\bio.tree.server.application.tests\bio.tree.server.application.tests.csproj", "{6E5288AC-86B4-4223-A6AE-9BFE6396653E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.tests.shared", "tests\bio.tree.server\bio.tree.server.tests.shared\bio.tree.server.tests.shared.csproj", "{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.tests.shared", "tests\bio.tree.server.tests.shared\bio.tree.server.tests.shared.csproj", "{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure", "src\bio.tree.server\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj", "{BC52C91E-516D-469A-A812-37A91FA2F757}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure", "src\bio.tree.server.infrastructure\bio.tree.server.infrastructure.csproj", "{BC52C91E-516D-469A-A812-37A91FA2F757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.integration.tests", "tests\bio.tree.server\bio.tree.server.integration.tests\bio.tree.server.integration.tests.csproj", "{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.integration.tests", "tests\bio.tree.server.integration.tests\bio.tree.server.integration.tests.csproj", "{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure.tests", "tests\bio.tree.server\bio.tree.server.infrastructure.tests\bio.tree.server.infrastructure.tests.csproj", "{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bio.tree.server.infrastructure.tests", "tests\bio.tree.server.infrastructure.tests\bio.tree.server.infrastructure.tests.csproj", "{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,18 +78,17 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0051465E-8D30-4F52-B84F-8403C64EE46E} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
 		{6FAC4124-AC9B-4490-8861-E7C0CF6E2337} = {0051465E-8D30-4F52-B84F-8403C64EE46E}
-		{FDCB65C5-D910-41D8-83F4-EAF5AA9077BE} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
 		{0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
-		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{421170A4-BDDA-4361-B515-544020E5CDF7} = {0C7EA0AA-3B3E-4717-BF0D-876B0E4988AE}
-		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{9C328220-BCF7-4D5D-862A-928466BA2F93} = {6BB0F0AE-B5A2-475C-A36A-9F5BB024A461}
 		{5297CF5D-C37D-4E26-98B1-8BC0EF0B1199} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
-		{0EFB0433-3B67-4B93-89C6-135E5D9C4396} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{6E5288AC-86B4-4223-A6AE-9BFE6396653E} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
 		{9CA7D4D2-D83A-4CD4-97AC-BA7FD861A054} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
-		{BC52C91E-516D-469A-A812-37A91FA2F757} = {FDCB65C5-D910-41D8-83F4-EAF5AA9077BE}
 		{F2F3C2B5-70E1-44B8-91BA-BF60BCA9F38D} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
 		{B1A9EFD2-1337-4E1A-8E62-F19A5372BDA5} = {9C328220-BCF7-4D5D-862A-928466BA2F93}
+		{39B77740-D2E0-4FDB-A5AF-9D7C9A53D3B9} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{0EFB0433-3B67-4B93-89C6-135E5D9C4396} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{0CBC40B4-DCCE-4021-AC71-CAEBFBA95721} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
+		{BC52C91E-516D-469A-A812-37A91FA2F757} = {B8B2AF69-2B8B-4DBC-8A78-D09389BBEF72}
 	EndGlobalSection
 EndGlobal

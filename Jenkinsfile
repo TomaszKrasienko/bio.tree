@@ -20,6 +20,15 @@ pipeline {
                 }
             }
         }
+        
+        stage('Docker build'){
+            steps{
+                script{
+                    def dockerBuild = "docker build -t bio.tree:1.0 -f Dockerfile ."
+                    bat(dockerBuild)
+                }
+            }
+        }
     }
 
     post {

@@ -5,7 +5,6 @@ using bio.tree.server.application.DTO;
 using bio.tree.server.application.Services;
 using bio.tree.server.infrastructure.DAL.Documents;
 using bio.tree.server.integration.tests._Helpers;
-using bio.tree.shared;
 using Microsoft.Extensions.DependencyInjection;
 using Shouldly;
 using Xunit;

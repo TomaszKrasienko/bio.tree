@@ -1,4 +1,4 @@
-namespace bio.tree.shared.DTO;
+namespace bio.tree.server.application.DTO;
 
 public class UserLinkDto
 {

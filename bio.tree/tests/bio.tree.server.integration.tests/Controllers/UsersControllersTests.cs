@@ -5,8 +5,6 @@ using bio.tree.server.application.CQRS.Users.Commands.Verify;
 using bio.tree.server.application.DTO;
 using bio.tree.server.infrastructure.DAL.Documents;
 using bio.tree.server.tests.shared.Factories.Documents;
-using bio.tree.shared;
-using bio.tree.shared.DTO;
 using MongoDB.Driver;
 using Shouldly;
 using Xunit;

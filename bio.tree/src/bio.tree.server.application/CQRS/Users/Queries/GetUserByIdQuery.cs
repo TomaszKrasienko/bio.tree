@@ -1,5 +1,5 @@
 using bio.tree.server.application.CQRS.Abstractions.Queries;
-using bio.tree.shared.DTO;
+using bio.tree.server.application.DTO;
 
 namespace bio.tree.server.application.CQRS.Users.Queries;
 

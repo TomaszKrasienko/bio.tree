@@ -1,9 +1,9 @@
 using bio.tree.server.application.CQRS.Users.Commands.SignIn;
+using bio.tree.server.application.DTO;
 using bio.tree.server.application.Exceptions;
 using bio.tree.server.application.Services;
 using bio.tree.server.domain.Models;
 using bio.tree.server.domain.Repositories;
-using bio.tree.shared.DTO;
 using NSubstitute;
 using Shouldly;
 using Xunit;

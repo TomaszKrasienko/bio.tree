@@ -5,9 +5,9 @@ using bio.tree.server.application.CQRS.Users.Commands.SignIn;
 using bio.tree.server.application.CQRS.Users.Commands.SignUp;
 using bio.tree.server.application.CQRS.Users.Commands.Verify;
 using bio.tree.server.application.CQRS.Users.Queries;
+using bio.tree.server.application.DTO;
 using bio.tree.server.application.Services;
 using bio.tree.server.infrastructure.Contexts.Abstractions;
-using bio.tree.shared.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

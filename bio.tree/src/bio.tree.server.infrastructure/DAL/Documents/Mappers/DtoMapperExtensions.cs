@@ -1,4 +1,4 @@
-using bio.tree.shared.DTO;
+using bio.tree.server.application.DTO;
 
 namespace bio.tree.server.infrastructure.DAL.Documents.Mappers;
 

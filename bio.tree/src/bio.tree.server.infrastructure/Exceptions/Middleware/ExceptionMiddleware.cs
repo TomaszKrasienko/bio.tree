@@ -1,7 +1,6 @@
 using bio.tree.server.application.DTO;
 using bio.tree.server.application.Exceptions;
 using bio.tree.server.domain.Exceptions;
-using bio.tree.shared;
 using Humanizer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;

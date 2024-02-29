@@ -1,8 +1,8 @@
 using bio.tree.server.application.CQRS.Abstractions.Queries;
 using bio.tree.server.application.CQRS.Users.Queries;
+using bio.tree.server.application.DTO;
 using bio.tree.server.infrastructure.DAL.Documents;
 using bio.tree.server.infrastructure.DAL.Documents.Mappers;
-using bio.tree.shared.DTO;
 using MongoDB.Driver;
 
 namespace bio.tree.server.infrastructure.DAL.QueryHandlers;

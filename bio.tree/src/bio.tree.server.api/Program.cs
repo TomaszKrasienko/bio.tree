@@ -1,5 +1,4 @@
 using bio.tree.server.infrastructure.Configuration;
-using bio.tree.shared;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();

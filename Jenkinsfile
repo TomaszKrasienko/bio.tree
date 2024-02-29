@@ -17,10 +17,11 @@ pipeline {
                 script {
                     def dotnetCmd = "dotnet build -c Release"
                     bat(dotnetCmd)
+                    echo 'Test'
                 }
             }
         }
-        
+
         stage('Docker build'){
             steps{
                 script{

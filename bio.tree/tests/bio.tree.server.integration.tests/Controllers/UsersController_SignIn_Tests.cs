@@ -17,6 +17,8 @@ public sealed class UsersController_SignIn_Tests : BaseTestController
     [Fact]
     public async Task SignIn_ForExistingUser_ShouldReturnOkStatusCode()
     {
+        
+        
         //arrange
         var command = new SignInCommand("test@test.pl", "pass123");
         var collection = TestDatabase.GetCollection<UserDocument>("users");

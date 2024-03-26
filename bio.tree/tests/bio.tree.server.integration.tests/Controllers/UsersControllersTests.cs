@@ -19,7 +19,7 @@ public sealed class UsersControllersTests : BaseTestController, IDisposable
     {
         //arrange
         var command = new SignUpCommand(Guid.Empty, "test@test.pl", "Joe", "Doe",
-            "JoeDoe00", "StrongPass123!");
+            "JoeDoe00", "User","StrongPass123!");
         
         //act
         var response = await Client.PostAsJsonAsync<SignUpCommand>("/users/sign-up", command);
@@ -37,7 +37,7 @@ public sealed class UsersControllersTests : BaseTestController, IDisposable
     {
         //arrange
         var command = new SignUpCommand(Guid.Empty, "test@test.pl", "Joe", "Doe",
-            "JoeDoe00", "StrongPass123!");
+            "JoeDoe00", "User","StrongPass123!");
         var collection = TestDatabase.GetCollection<UserDocument>("users");
         await collection.InsertOneAsync(new UserDocument()
         {

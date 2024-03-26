@@ -105,7 +105,7 @@ public sealed class UserTests
     public UserTests()
     {
         _user = User.Create(Guid.NewGuid(), "test@test.pl", "first_name", "last_name",
-            "nickname", "test_pass");
+            "nickname", "User", "test_pass");
     }
 
     #endregion

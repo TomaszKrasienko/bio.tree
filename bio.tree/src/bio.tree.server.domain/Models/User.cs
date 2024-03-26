@@ -9,6 +9,7 @@ public sealed class User : Entity
     public FullName FullName { get; private set; }
     public Email Email { get; private set; }
     public Nickname Nickname { get; private set; }
+    public Role Role { get; set; }
     public Password Password { get; private set; }
     public VerificationToken VerificationToken { get; private set; }
     public ResetToken ResetToken { get; private set; }
@@ -32,19 +33,20 @@ public sealed class User : Entity
         _userLinks = new HashSet<UserLink>();
     }
 
-    private User(EntityId id, FullName fullName, Email email, Nickname nickname, Password password)
+    private User(EntityId id, FullName fullName, Email email, Nickname nickname, Role role, Password password)
         : this(id)
     {
         FullName = fullName;
         Email = email;
         Nickname = nickname;
+        Role = role;
         Password = password;
         VerificationToken = new VerificationToken();
     }
     
     public static User Create(Guid id, string email, string firstName, string lastName, string nickname,
-        string password)
-        => new User(id, new FullName(firstName, lastName), email, nickname, password);
+        string role, string password)
+        => new User(id, new FullName(firstName, lastName), email, nickname, role, password);
 
     public void Verify(string token, DateTimeOffset confirmationDate)
     {

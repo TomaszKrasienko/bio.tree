@@ -1,4 +1,4 @@
-@url = http://localhost:5001
+@url = http://localhost:50010
 
 ###
 GET {{url}}/test
@@ -16,18 +16,18 @@ Content-Type: application/json
 }
 
 ###
-# @name sing_in
+# @name sign_in
 POST {{url}}/users/sign-in
 Content-Type: application/json
 
 {
-    "email":"test@test.pl",
-    "password":"Pass123!"
+    "email":"tomaszk@outlook.com",
+    "password":"RUCH123nowe!"
 }
 
 ###
-@token = {{sing_in.request.body.$.token}}
+@token = {{sign_in.response.body.$.token}}
 
 ###
 GET {{url}}/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIxZTFjY2IzLTYyNDAtNDY5Zi1hYTAyLTY3NDE1NzllNWQ2OSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMjFlMWNjYjMtNjI0MC00NjlmLWFhMDItNjc0MTU3OWU1ZDY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IjIxZTFjY2IzLTYyNDAtNDY5Zi1hYTAyLTY3NDE1NzllNWQ2OSIsIm5iZiI6MTcwODk3MDQ0MSwiZXhwIjoxNzA4OTcxMDQxLCJpc3MiOiJiaW90cmVlaXNzdWVyIiwiYXVkIjoiYmlvdHJlZWF1ZGllbmNlIn0.Z2opLawdCdY0eNa5QBGy8qG3pJfUVPZjKrvR52fv5fo
+Authorization: Bearer {{token}}

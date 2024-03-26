@@ -5,17 +5,19 @@ namespace bio.tree.server.domain.Models;
 
 public sealed class Platform : Entity
 {
-    public string Name { get; private set; }
+    public Name Name { get; private set; }
+    public Icon Icon { get; private set; }
     
     private Platform(EntityId id) : base(id)
     {
     }
 
-    public Platform(EntityId id, Name name) : this(id)
+    public Platform(EntityId id, Name name, Icon icon) : this(id)
     {
         Name = name;
+        Icon = icon;
     }
 
-    public static Platform Create(Guid id, string name)
-        => new Platform(id, name);
+    public static Platform Create(Guid id, string name, string icon)
+        => new Platform(id, name, icon);
 }

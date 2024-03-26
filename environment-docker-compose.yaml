@@ -13,3 +13,7 @@ services:
 volumes:
   mongo:
     driver: local
+
+networks:
+  default:
+    name: bio-tree

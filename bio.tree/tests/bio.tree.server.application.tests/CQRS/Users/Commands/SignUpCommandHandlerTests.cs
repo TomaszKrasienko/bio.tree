@@ -18,7 +18,7 @@ public sealed class SignUpCommandHandlerTests
         //arrange
         var securedPassword = "secured_password";
         var command = new SignUpCommand(Guid.NewGuid(), "test@test.pl", "first_name",
-            "last_name", "nickname", "password");
+            "last_name", "nickname", "User","password");
         _userRepository.ExistsAsync(command.Email).Returns(false);
         _passwordManager.Secure(command.Password).Returns(securedPassword);
         
@@ -43,7 +43,7 @@ public sealed class SignUpCommandHandlerTests
         //arrange
         var securedPassword = "secured_password";
         var command = new SignUpCommand(Guid.NewGuid(), "test@test.pl", "first_name",
-            "last_name", "nickname", "password");
+            "last_name", "nickname", "User","password");
         _userRepository.ExistsAsync(command.Email).Returns(true);
         _passwordManager.Secure(command.Password).Returns(securedPassword);
         

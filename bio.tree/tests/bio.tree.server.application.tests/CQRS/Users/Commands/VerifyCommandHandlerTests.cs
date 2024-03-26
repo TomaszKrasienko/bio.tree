@@ -61,7 +61,7 @@ public sealed class VerifyCommandHandlerTests
         _clock = TestClock.Get();
         _handler = new VerifyCommandHandler(_userRepository, _clock);
         _user = User.Create(Guid.NewGuid(), "test@test.pl", "first_name", "last_name",
-            "nickname", "test_pass");
+            "nickname", "User","test_pass");
     }
     #endregion
 }

@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  bio-tree:
+    container_name: bio-tree
+    build: ./bio.tree
+    ports:
+      - 50010:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=docker
+networks:
+  default:
+    name: bio-tree

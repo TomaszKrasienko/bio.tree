@@ -9,11 +9,38 @@ namespace bio.tree.server.domain.tests.Models;
 public sealed class CreateUserTests
 {
     [Fact]
+    public void Create_GivenAllArguments_ShouldReturnUser()
+    {
+        //arrange
+        var id = Guid.NewGuid();
+        var email = "test@test.pl";
+        var firstName = "test_first_name";
+        var lastName = "test_last_name";
+        var nickName = "test_nick_name";
+        var role = "User";
+        var pass = "test_pass";
+        
+        //act
+        var user = User.Create(id, email, firstName, lastName, nickName,role,pass);
+        
+        //assert
+        user.ShouldNotBeNull();
+        user.Id.Value.ShouldBe(id);
+        user.Email.Value.ShouldBe(email);
+        user.FullName.FirstName.ShouldBe(firstName);
+        user.FullName.LastName.ShouldBe(lastName);
+        user.Nickname.Value.ShouldBe(nickName);
+        user.Role.Value.ShouldBe(role);
+        user.Password.Value.ShouldBe(pass);
+        user.VerificationToken.Token.ShouldNotBeNullOrWhiteSpace();
+    }
+    
+    [Fact]
     public void Create_GivenEmptyEntityId_ShouldThrowEmptyEntityIdException()
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.Empty, "test@test.pl", 
-            "test_first_name", "test_last_name", "test_nickname", "test_pass"));
+            "test_first_name", "test_last_name", "test_nickname", "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<EmptyEntityIdException>();
@@ -24,7 +51,7 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), string.Empty, 
-            "test_first_name", "test_last_name", "test_nickname", "test_pass"));
+            "test_first_name", "test_last_name", "test_nickname", "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<EmptyEmailException>();
@@ -35,7 +62,7 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "invalid_email", 
-            "test_first_name", "test_last_name", "test_nickname", "test_pass"));
+            "test_first_name", "test_last_name", "test_nickname", "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<InvalidEmailException>();
@@ -46,7 +73,7 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
-            string.Empty, "test_last_name", "test_nickname", "test_pass"));
+            string.Empty, "test_last_name", "test_nickname", "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<EmptyFirstNameException>();
@@ -57,7 +84,7 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
-            "test_first_name", string.Empty, "test_nickname", "test_pass"));
+            "test_first_name", string.Empty, "test_nickname", "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<EmptyLastNameException>();
@@ -68,10 +95,32 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
-            "test_first_name", "test_last_name", string.Empty, "test_pass"));
+            "test_first_name", "test_last_name", string.Empty, "User","test_pass"));
         
         //assert
         exception.ShouldBeOfType<EmptyNicknameException>();
+    }
+    
+    [Fact]
+    public void Create_GivenEmptyRole_ShouldThrowEmptyRoleException()
+    {
+        //act
+        var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
+            "test_first_name", "test_last_name", "test_nickname", string.Empty, "test_pass"));
+        
+        //assert
+        exception.ShouldBeOfType<EmptyUserRoleException>();
+    }
+    
+    [Fact]
+    public void Create_GivenUnavailableRole_ShouldThrowUnavailableRoleException()
+    {
+        //act
+        var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
+            "test_first_name", "test_last_name", "test_nickname", "invalid", "test_pass"));
+        
+        //assert
+        exception.ShouldBeOfType<UnavailableRoleException>();
     }
     
     [Fact]
@@ -79,34 +128,9 @@ public sealed class CreateUserTests
     {
         //act
         var exception = Record.Exception(() => User.Create(Guid.NewGuid(), "test@test.pl", 
-            "test_first_name", "test_last_name", "test_nickname", string.Empty));
+            "test_first_name", "test_last_name", "test_nickname", "User",string.Empty));
         
         //assert
         exception.ShouldBeOfType<EmptyPasswordException>();
-    }
-
-    [Fact]
-    public void Create_GivenAllArguments_ShouldReturnUser()
-    {
-        //arrange
-        var id = Guid.NewGuid();
-        var email = "test@test.pl";
-        var firstName = "test_first_name";
-        var lastName = "test_last_name";
-        var nickName = "test_nick_name";
-        var pass = "test_pass";
-        
-        //act
-        var user = User.Create(id, email, firstName, lastName, nickName,pass);
-        
-        //assert
-        user.ShouldNotBeNull();
-        user.Id.Value.ShouldBe(id);
-        user.Email.Value.ShouldBe(email);
-        user.FullName.FirstName.ShouldBe(firstName);
-        user.FullName.LastName.ShouldBe(lastName);
-        user.Nickname.Value.ShouldBe(nickName);
-        user.Password.Value.ShouldBe(pass);
-        user.VerificationToken.Token.ShouldNotBeNullOrWhiteSpace();
     }
 }

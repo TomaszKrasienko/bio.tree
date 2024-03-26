@@ -20,7 +20,7 @@ internal sealed class SignUpCommandHandler(
 
         var securedPassword = passwordManager.Secure(command.Password);
         var user = User.Create(command.Id, command.Email, command.FirstName, command.LastName,
-            command.Nickname, securedPassword);
+            command.Nickname, command.Role, securedPassword);
         await userRepository.AddAsync(user);
     }
 }

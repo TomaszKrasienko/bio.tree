@@ -109,7 +109,7 @@ public sealed class SignInCommandHandlerTests
             _passwordManager, _authenticator, _tokenStorage);
         
         _user = User.Create(Guid.NewGuid(), "test@test.pl", "first_name", "last_name",
-            "nickname", "test_pass");
+            "nickname", "User","test_pass");
     }
 
     #endregion
